@@ -56,6 +56,7 @@
     $("precio-lista").parentElement.hidden = !r.lista;
     $("precio").textContent = r.precio;
     $("cuotas").hidden = !r.cuotas;
+    $("cuotas").href = linkDePago(region);
     $("cuotas-texto").textContent = r.cuotas || "";
     $("chip-link").textContent = r.chip || "Inscribirme al Bootcamp";
     $("pagar").href = linkDePago(region);
@@ -68,7 +69,7 @@
   }
   $("otro-pais").addEventListener("click", () => { region = region === "USD" ? regionPropia : "USD"; pintarPagos(); });
   pintarPagos();
-  [["pagar", "clic_pago"], ["wsp", "clic_whatsapp"], ["chip-link", "clic_chip"]]
+  [["pagar", "clic_pago"], ["cuotas", "clic_cuotas"], ["wsp", "clic_whatsapp"], ["chip-link", "clic_chip"]]
     .forEach(([boton, evento]) => $(boton).addEventListener("click", () => registrarEvento(evento, { segundo: segundoActual(), region })));
 
   if (!inicio) { mostrar("capa-sin-datos"); return; }

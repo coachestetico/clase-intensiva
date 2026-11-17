@@ -65,8 +65,8 @@ const CONFIG = {
       AR: {
         precio: "$ 195.000", lista: "175 USD",
         pago: "https://mpago.li/2raEe9D",
-        cuotas: "3 cuotas sin interés de $ 65.000", // sello bajo el precio (solo se muestra si la región lo tiene)
-        boton: "Inscribirme · 3 cuotas sin interés",
+        cuotas: "Pagar en 3 cuotas sin interés de $ 65.000", // botón de pago crema bajo el precio (el link de Mercado Pago está hecho para 3 cuotas)
+        boton: "Inscribirme con Mercado Pago · $ 195.000",
         chip: "Inscribirme · 3 cuotas sin interés", // botón chico sobre el video
         nota: "Pago seguro con Mercado Pago. Después de pagar, envía el comprobante por WhatsApp y te damos el acceso.",
         dudas: "https://wa.link/x5jiat"
