@@ -53,24 +53,24 @@ const CONFIG = {
        Si a una región le falta el precio o el link, ve la de dólares. */
     regiones: {
       USD: {
-        precio: "125 USD", lista: "245 USD", pago: "hotmart",
+        precio: "125 USD", lista: "175 USD", pago: "hotmart",
         boton: "Inscribirme ahora · 125 USD",
         nota: "Pago seguro por Hotmart. El acceso te llega al correo."
       },
       EUR: {                      // Europa: es el precio que muestra Hotmart para España
-        precio: "119 €", lista: "233 €", pago: "hotmart",
+        precio: "119 €", lista: "167 €", pago: "hotmart",
         boton: "Inscribirme ahora · 119 €",
         nota: "Pago seguro por Hotmart. El acceso te llega al correo."
       },
       AR: {
-        precio: "$ 195.000", lista: "245 USD",
+        precio: "$ 195.000", lista: "175 USD",
         pago: "https://mpago.li/2raEe9D",
         boton: "Inscribirme con Mercado Pago · $ 195.000",
         nota: "Hasta 3 cuotas sin interés. Después de pagar, envía el comprobante por WhatsApp y te damos el acceso.",
         dudas: "https://wa.link/x5jiat"
       },
       VE: {
-        precio: "111.500 Bs", lista: "245 USD",
+        precio: "111.500 Bs", lista: "175 USD",
         pago: "https://wa.link/0t6247", // se paga por Pago Móvil: los datos se pasan por WhatsApp
         boton: "Quiero pagar en bolívares",
         nota: "Te pasamos los datos de Pago Móvil por WhatsApp.",
