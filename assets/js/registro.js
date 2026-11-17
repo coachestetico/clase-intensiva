@@ -47,7 +47,7 @@
 
     formulario.querySelectorAll("[data-entrada]").forEach(el => { el.id = `${pre}-${el.dataset.entrada}`; });
     formulario.querySelectorAll("[data-para]").forEach(el => { el.htmlFor = `${pre}-${el.dataset.para}`; });
-    formulario.querySelector("[data-datos-clase]").textContent = `Clase gratuita · ${duracion} · con ${CONFIG.clase.docente}`;
+    formulario.querySelector("[data-datos-clase]").textContent = `Clase intensiva · ${duracion} · con ${CONFIG.clase.docente}`;
     formulario.querySelector(".zona").textContent = zona ? `Horarios en tu hora local (${zona})` : "Horarios en tu hora local";
 
     const etiqueta = formulario.querySelector("[data-etiqueta]");

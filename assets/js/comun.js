@@ -170,7 +170,7 @@ function linkGoogleCalendar(inicio, sala) {
   const u = new URL("https://calendar.google.com/calendar/render");
   u.search = new URLSearchParams({
     action: "TEMPLATE",
-    text: `Clase gratuita · ${CONFIG.clase.titulo}`,
+    text: `Clase intensiva · ${CONFIG.clase.titulo}`,
     dates: `${fechaCalendario(inicio)}/${fechaCalendario(fin)}`,
     details: `Entra desde este link 5 minutos antes:\n${sala}\n\nLa clase empieza puntual.`,
     location: sala
@@ -185,7 +185,7 @@ function archivoIcs(inicio, sala) {
     "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Coach Estetico//Clase//ES", "BEGIN:VEVENT",
     `UID:${inicio}-${nuevoId()}@coachestetico`, `DTSTAMP:${fechaCalendario(Date.now())}`,
     `DTSTART:${fechaCalendario(inicio)}`, `DTEND:${fechaCalendario(fin)}`,
-    `SUMMARY:${escapar(`Clase gratuita · ${CONFIG.clase.titulo}`)}`,
+    `SUMMARY:${escapar(`Clase intensiva · ${CONFIG.clase.titulo}`)}`,
     `DESCRIPTION:${escapar(`Entra desde este link 5 minutos antes:\n${sala}`)}`,
     `URL:${sala}`,
     "BEGIN:VALARM", "TRIGGER:-PT15M", "ACTION:DISPLAY", "DESCRIPTION:Tu clase empieza en 15 minutos", "END:VALARM",

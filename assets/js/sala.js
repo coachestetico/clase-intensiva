@@ -20,7 +20,7 @@
 
   /* ---- Textos ---- */
   $("titulo-clase").textContent = CONFIG.clase.titulo;
-  $("docente-clase").textContent = `Clase gratuita con ${CONFIG.clase.docente}`;
+  $("docente-clase").textContent = `Clase intensiva con ${CONFIG.clase.docente}`;
   $("panel-docente").textContent = `Con ${CONFIG.clase.docente}, fundadora de Coach Estético.`;
   $("fechas").textContent = oferta.fechas.split("·")[0].trim();
   if (CONFIG.logoBootcamp) {
@@ -291,10 +291,10 @@
   const reloj = setInterval(() => {
     const falta = inicio - Date.now();
     $("reloj").textContent = relojRegresivo(inicio);
-    document.title = `${relojRegresivo(inicio)} · Clase gratuita | Coach Estético`;
+    document.title = `${relojRegresivo(inicio)} · Clase intensiva | Coach Estético`;
     if (falta <= 0) {
       clearInterval(reloj);
-      document.title = "Clase gratuita | Coach Estético";
+      document.title = "Clase intensiva | Coach Estético";
       empezar(desde);
     }
   }, 250);
