@@ -117,8 +117,12 @@
         <div class="precios">
           <span class="antes">Valor: <s id="precio-lista"></s></span>
           <span class="ahora" id="precio"></span>
-          <span class="cupos" id="cupos"></span>
+          <span class="cuotas" id="cuotas" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19M6.5 15h4"/></svg>
+            <span id="cuotas-texto"></span>
+          </span>
         </div>
+        <div class="cupos"><span class="punto" aria-hidden="true"></span><span id="cupos"></span></div>
         <ul id="incluye"></ul>
         <div class="botones">
           <a class="boton ancho" id="pagar" href="#" target="_blank" rel="noopener">Inscribirme ahora</a>

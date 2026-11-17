@@ -55,6 +55,9 @@
     $("precio-lista").textContent = r.lista;
     $("precio-lista").parentElement.hidden = !r.lista;
     $("precio").textContent = r.precio;
+    $("cuotas").hidden = !r.cuotas;
+    $("cuotas-texto").textContent = r.cuotas || "";
+    $("chip-link").textContent = r.chip || "Inscribirme al Bootcamp";
     $("pagar").href = linkDePago(region);
     $("pagar").textContent = r.boton;
     $("nota-pago").textContent = r.nota;
