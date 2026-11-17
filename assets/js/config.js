@@ -2,14 +2,14 @@
    Lo marcado con PRUEBA o FALTA se completa cuando esté el video definitivo. */
 const CONFIG = {
   clase: {
-    titulo: "¿Por qué este acné no mejora aunque estés haciendo todo “bien”?",
-    bajada: "Aprende a identificar qué está sosteniendo el cuadro y qué deberías priorizar antes de seguir cambiando productos o protocolos.",
+    titulo: "La mancha no es el diagnóstico: qué tienes que entender antes de despigmentar",
+    bajada: "Cómo se forma una mancha, qué mitos frenan tus resultados y cómo pasar de un protocolo a un tratamiento que despigmente de verdad.",
     docente: "Dianela Draganov",
-    duracionMin: 90
+    duracionMin: 120               // el video, desde inicioSegundo hasta el final, dura casi 2 h
   },
 
   /* Banner de la clase: ya trae el título y la foto. La parte derecha tiene que quedar libre para el formulario. */
-  banner: "assets/img/banner-clase-acne.jpg",
+  banner: "assets/img/banner-clase-manchas.jpg",
   fotoDocente: "assets/img/dianela.png",
   logoBootcamp: "assets/img/logo-bootcamp.png", // vacío = logo armado con texto
 
@@ -30,19 +30,20 @@ const CONFIG = {
   /* Video: tipo "mp4" con la URL del archivo, o tipo "youtube" con el id del video no listado. */
   video: {
     tipo: "youtube",
-    fuente: "ft33J5L1VHU",        // Webinar del 2/11 (dura 1 h 31 min 34 s)
-    inicioSegundo: 33             // arranca acá: antes se ve la grilla de Zoom con caras y nombres de alumnas
+    fuente: "qcn5x4dFnl0",        // Webinar manchas del 16/11 (dura 2 h 06 min 17 s)
+    inicioSegundo: 394            // 6:34, "hoy les doy la bienvenida": antes es la conexión, la grilla de Zoom y un timer de 5 minutos
   },
-  ofertaSegundo: 4886,            // 1:21:26, "creamos un bootcamp a los que los quiero invitar" (precio en 1:26:22)
+  ofertaSegundo: 6289,            // 1:44:49, "les quiero mostrar de qué se trata el próximo bootcamp" (precio de 125 en 1:56:10)
 
   oferta: {
     producto: "¿Qué hago con esta piel?",
     fechas: "24, 25 y 26 de noviembre · en vivo por Zoom",
-    cupos: 40,
-    incluye: [
+    cupos: 10,
+    incluye: [                    // lo mismo que cuenta Dianela en el video
       "Clase 0 nivelatoria apenas te inscribes",
-      "3 jornadas en vivo: acné, pigmentación y envejecimiento",
-      "12 casos y 12 planes de acción completos",
+      "3 jornadas en vivo: acné, manchas y envejecimiento",
+      "15 casos con su plan de acción escrito (incluye rosácea y foliculitis en piel masculina)",
+      "3 docentes internacionales y acceso ilimitado a las grabaciones",
       "Grupo de WhatsApp de acompañamiento hasta el 14/12"
     ],
     hotmart: "https://pay.hotmart.com/F108130345D?off=khch8zx2", // link solo para esta página

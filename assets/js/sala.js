@@ -32,7 +32,7 @@
   }
   if (CONFIG.banner) document.querySelectorAll(".capa.con-fondo").forEach(c => { c.style.backgroundImage = `url("${CONFIG.banner}")`; });
 
-  $("cupos").textContent = `Solo para los primeros ${oferta.cupos} lugares`;
+  $("cupos").textContent = `Quedan solo ${oferta.cupos} cupos a este precio`;
   oferta.incluye.forEach(texto => { const li = document.createElement("li"); li.textContent = texto; $("incluye").appendChild(li); });
   $("wsp").href = oferta.whatsapp;
   $("nota-alumnas").textContent = oferta.notaAlumnas || "";
