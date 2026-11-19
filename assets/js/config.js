@@ -9,7 +9,7 @@ const CONFIG = {
   },
 
   /* Banner de la clase: ya trae el título y la foto. La parte derecha tiene que quedar libre para el formulario. */
-  banner: "assets/img/banner-clase-piel.jpg",
+  banner: "assets/img/banner-clase-piel.jpg?v=2",
   fotoDocente: "assets/img/dianela.png",
   logoBootcamp: "assets/img/logo-bootcamp.png", // vacío = logo armado con texto
 
