@@ -164,15 +164,23 @@
 
   function segundoActual() { return video ? Math.round(video.tiempo()) : 0; }
 
-  /* ---- Oferta ---- */
+  /* ---- Oferta, en dos pasos ----
+     1) bootcampSegundo: Dianela empieza a presentar el Bootcamp → aparece el calendario (sin precio).
+     2) ofertaSegundo: muestra lo que incluye y el precio → aparecen el panel de pago y el botón sobre el video. */
+  let calendarioVisible = false;
+  function mostrarCalendario() {
+    if (calendarioVisible) return;
+    calendarioVisible = true;
+    if ($("calendario")) $("calendario").hidden = false;
+  }
   function lanzarOferta() {
     if (ofertaLanzada) return;
     ofertaLanzada = true;
+    mostrarCalendario();
     $("panel-clase").hidden = true;
     $("logo-bootcamp").hidden = false;
     $("oferta").hidden = false;
     $("chip-oferta").hidden = false;
-    if ($("calendario")) $("calendario").hidden = false;
     registrarEvento("oferta", { segundo: segundoActual() });
   }
 
@@ -189,6 +197,7 @@
 
     setInterval(() => {
       if (termino) return;
+      if (!calendarioVisible && video.tiempo() >= (CONFIG.bootcampSegundo || CONFIG.ofertaSegundo)) mostrarCalendario();
       if (!ofertaLanzada && video.tiempo() >= CONFIG.ofertaSegundo) lanzarOferta();
       /* Si se pausó sola (celular bloqueado, pestaña en segundo plano), se ofrece seguir */
       if (!video.reproduciendo() && $("capa-sonido").hidden) {

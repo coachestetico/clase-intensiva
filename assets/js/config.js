@@ -33,7 +33,8 @@ const CONFIG = {
     fuente: "wknvf2fTohs",        // clase editada del 19/11 con el cierre comercial (59 min 45 s)
     inicioSegundo: 6              // 0–6 s es una placa del Bootcamp: el Bootcamp queda oculto hasta la oferta
   },
-  ofertaSegundo: 2914,            // 48:34, entra la placa "Hoy comprendiste el método… BOOTCAMP" (precios 125/175/245 en 56:10, "Inscríbete ya" en 59:25)
+  bootcampSegundo: 2914,          // 48:34, entra la placa "Hoy comprendiste el método… BOOTCAMP": aparece el calendario (sin precio)
+  ofertaSegundo: 3337,            // 55:37, "Todo lo que incluye tu inscripción hoy" con los precios 125/175/245: aparece el panel de pago ("Inscríbete ya" en 59:25)
 
   oferta: {
     producto: "¿Qué hago con esta piel?",
