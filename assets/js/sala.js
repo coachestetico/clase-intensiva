@@ -172,6 +172,7 @@
     $("logo-bootcamp").hidden = false;
     $("oferta").hidden = false;
     $("chip-oferta").hidden = false;
+    if ($("calendario")) $("calendario").hidden = false;
     registrarEvento("oferta", { segundo: segundoActual() });
   }
 
