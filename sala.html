@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@800&display=swap">
-  <link rel="stylesheet" href="assets/css/estilo.css?v=20261119d">
+  <link rel="stylesheet" href="assets/css/estilo.css?v=20261119f">
 </head>
 <body class="sala-pagina">
 
@@ -141,8 +141,15 @@
     </figure>
   </main>
 
-  <script src="assets/js/config.js?v=20261119d"></script>
-  <script src="assets/js/comun.js?v=20261119d"></script>
-  <script src="assets/js/sala.js?v=20261119d"></script>
+  <!-- Desde la oferta: inscripciones reales al Bootcamp (assets/js/inscriptas.js), de a una -->
+  <div class="aviso-inscripcion" id="aviso-inscripcion" aria-hidden="true" hidden>
+    <span class="tilde"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+    <p><strong id="aviso-nombre"></strong>, de <span id="aviso-pais"></span>, se inscribió al Bootcamp</p>
+  </div>
+
+  <script src="assets/js/config.js?v=20261119f"></script>
+  <script src="assets/js/comun.js?v=20261119f"></script>
+  <script src="assets/js/inscriptas.js?v=20261119f"></script>
+  <script src="assets/js/sala.js?v=20261119f"></script>
 </body>
 </html>

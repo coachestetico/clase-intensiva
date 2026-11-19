@@ -182,6 +182,28 @@
     $("oferta").hidden = false;
     $("chip-oferta").hidden = false;
     registrarEvento("oferta", { segundo: segundoActual() });
+    iniciarAvisos();
+  }
+
+  /* Avisos "Ana, de México, se inscribió al Bootcamp": inscripciones reales (assets/js/inscriptas.js, se genera con
+     inscriptas-generar.pl desde la descarga de Hotmart). En orden al azar, sin repetir, uno cada 14–24 s. */
+  function iniciarAvisos() {
+    const lista = (typeof INSCRIPTAS !== "undefined" ? INSCRIPTAS : []).slice();
+    const caja = $("aviso-inscripcion");
+    if (!lista.length || !caja) return;
+    for (let i = lista.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [lista[i], lista[j]] = [lista[j], lista[i]]; }
+    const uno = () => {
+      const siguiente = lista.shift();
+      if (!siguiente) return;
+      $("aviso-nombre").textContent = siguiente[0];
+      $("aviso-pais").textContent = siguiente[1];
+      caja.hidden = false;
+      void caja.offsetWidth; // fuerza el cálculo de estilos para que la transición arranque desde oculto
+      caja.classList.add("visible");
+      setTimeout(() => { caja.classList.remove("visible"); setTimeout(() => { caja.hidden = true; }, 400); }, 5500);
+      if (lista.length) setTimeout(uno, 14000 + Math.random() * 10000);
+    };
+    setTimeout(uno, 8000);
   }
 
   /* ---- Clase ---- */
