@@ -5,7 +5,7 @@ const CONFIG = {
     titulo: "Lo haces todo bien y la piel no mejora: del protocolo al tratamiento",
     bajada: "Cada cuánto hacer las sesiones, qué cambia cuando hay hormonas, por qué el domiciliar no es skincare y el método base con el que Dianela trata acné y manchas.",
     docente: "Dianela Draganov",
-    duracionMin: 50                // el video dura 48 min 34 s
+    duracionMin: 60                // el video dura 59 min 45 s (desde el segundo 6, 59 min 39 s)
   },
 
   /* Banner de la clase: ya trae el título y la foto. La parte derecha tiene que quedar libre para el formulario. */
@@ -30,10 +30,10 @@ const CONFIG = {
   /* Video: tipo "mp4" con la URL del archivo, o tipo "youtube" con el id del video no listado. */
   video: {
     tipo: "youtube",
-    fuente: "6zvxaA-vNEE",        // clase editada del 19/11 (48 min 34 s): acné, sesiones, domiciliar y método base despigmentante
-    inicioSegundo: 0              // arranca directo con la clase ("Hoy vamos a tomar un caso")
+    fuente: "wknvf2fTohs",        // clase editada del 19/11 con el cierre comercial (59 min 45 s)
+    inicioSegundo: 6              // 0–6 s es una placa del Bootcamp: el Bootcamp queda oculto hasta la oferta
   },
-  ofertaSegundo: 2538,            // 42:18, justo después de "¿qué más fórmula mágica quieren tener?". El video no presenta el Bootcamp: la oferta la muestra la página
+  ofertaSegundo: 2914,            // 48:34, entra la placa "Hoy comprendiste el método… BOOTCAMP" (precios 125/175/245 en 56:10, "Inscríbete ya" en 59:25)
 
   oferta: {
     producto: "¿Qué hago con esta piel?",
