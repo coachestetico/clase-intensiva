@@ -2,14 +2,14 @@
    Lo marcado con PRUEBA o FALTA se completa cuando esté el video definitivo. */
 const CONFIG = {
   clase: {
-    titulo: "La mancha no es el diagnóstico: qué tienes que entender antes de despigmentar",
-    bajada: "Cómo se forma una mancha, qué mitos frenan tus resultados y cómo pasar de un protocolo a un tratamiento que despigmente de verdad.",
+    titulo: "Lo haces todo bien y la piel no mejora: del protocolo al tratamiento",
+    bajada: "Cada cuánto hacer las sesiones, qué cambia cuando hay hormonas, por qué el domiciliar no es skincare y el método base con el que Dianela trata acné y manchas.",
     docente: "Dianela Draganov",
-    duracionMin: 120               // el video, desde inicioSegundo hasta el final, dura casi 2 h
+    duracionMin: 50                // el video dura 48 min 34 s
   },
 
   /* Banner de la clase: ya trae el título y la foto. La parte derecha tiene que quedar libre para el formulario. */
-  banner: "assets/img/banner-clase-manchas.jpg",
+  banner: "assets/img/banner-clase-piel.jpg",
   fotoDocente: "assets/img/dianela.png",
   logoBootcamp: "assets/img/logo-bootcamp.png", // vacío = logo armado con texto
 
@@ -30,10 +30,10 @@ const CONFIG = {
   /* Video: tipo "mp4" con la URL del archivo, o tipo "youtube" con el id del video no listado. */
   video: {
     tipo: "youtube",
-    fuente: "qcn5x4dFnl0",        // Webinar manchas del 16/11 (dura 2 h 06 min 17 s)
-    inicioSegundo: 394            // 6:34, "hoy les doy la bienvenida": antes es la conexión, la grilla de Zoom y un timer de 5 minutos
+    fuente: "6zvxaA-vNEE",        // clase editada del 19/11 (48 min 34 s): acné, sesiones, domiciliar y método base despigmentante
+    inicioSegundo: 0              // arranca directo con la clase ("Hoy vamos a tomar un caso")
   },
-  ofertaSegundo: 6289,            // 1:44:49, "les quiero mostrar de qué se trata el próximo bootcamp" (precio de 125 en 1:56:10)
+  ofertaSegundo: 2538,            // 42:18, justo después de "¿qué más fórmula mágica quieren tener?". El video no presenta el Bootcamp: la oferta la muestra la página
 
   oferta: {
     producto: "¿Qué hago con esta piel?",
