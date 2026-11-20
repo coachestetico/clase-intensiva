@@ -3,7 +3,10 @@
   const $ = id => document.getElementById(id);
   const { id, inicio, pais } = parametros();
 
-  document.querySelectorAll("[data-wsp]").forEach(a => { a.href = CONFIG.oferta.whatsapp; });
+  document.querySelectorAll("[data-wsp]").forEach(a => {
+    a.href = CONFIG.oferta.whatsapp;
+    a.addEventListener("click", () => registrarEvento("clic_whatsapp_confirmacion"));
+  });
   $("titulo-clase").textContent = CONFIG.clase.titulo;
   $("docente").textContent = CONFIG.clase.docente;
   $("paso-duracion").textContent = `Empieza puntual, dura alrededor de ${textoDuracion(CONFIG.clase.duracionMin)} y se transmite una sola vez: no se puede pausar ni volver a ver. Si no entras en tu turno, te la pierdes.`;
