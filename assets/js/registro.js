@@ -10,7 +10,11 @@
   $("titulo-clase").textContent = CONFIG.clase.titulo;
   document.querySelectorAll("[data-duracion]").forEach(el => { el.textContent = duracion; });
   document.querySelectorAll("[data-duracion-texto]").forEach(el => { el.textContent = `Alrededor de ${duracion}.`; });
-  document.querySelectorAll("[data-wsp]").forEach(a => { a.href = CONFIG.oferta.whatsapp; });
+  document.querySelectorAll("[data-wsp]").forEach(a => {
+    a.href = CONFIG.oferta.whatsapp;
+    /* Acá todavía no hay id en la dirección: se usa el de su registro anterior, si tiene */
+    a.addEventListener("click", () => enviarAPlanilla({ tipo: "evento", evento: "clic_whatsapp_pagina", id: previo ? previo.id : "sin-registro", clase: "" }));
+  });
 
   /* Aviso de único turno: resuelve "aceptar" o "cambiar" */
   function avisoTurno(inicio) {

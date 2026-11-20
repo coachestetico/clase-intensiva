@@ -14,7 +14,7 @@ const CONFIG = {
   logoBootcamp: "assets/img/logo-bootcamp.png", // vacío = logo armado con texto
 
   horarios: {
-    cadaMinutos: 10,              // siempre hay una clase que empieza en menos de 10–13 minutos
+    cadaMinutos: 5,               // siempre hay una clase que empieza en menos de 5–8 minutos (20/11: con más de 5 min de espera, 1 de cada 2 se iba antes de empezar)
     anticipacionMin: 3,           // si falta menos que esto, se ofrece la siguiente
     fijos: ["10:00", "16:00", "20:00", "22:00"], // en hora de Argentina; a cada persona se le muestran en su hora local
     utcBase: -3,                  // Argentina
@@ -48,7 +48,7 @@ const CONFIG = {
       "Grupo de WhatsApp de acompañamiento hasta el 14/12"
     ],
     hotmart: "https://pay.hotmart.com/F108130345D?off=khch8zx2", // link solo para esta página
-    whatsapp: "https://wa.link/1c5v5w", // botón flotante y "¿Dudas?" de la oferta (salvo Argentina y Venezuela)
+    whatsapp: "https://wa.link/dqwu7r", // TODOS los botones de WhatsApp (flotante, confirmación, "¿Dudas?" y mails): la IA de WhatsApp responde a ese mensaje
 
     /* Precio según el país de la persona (sale del código de su WhatsApp o de su zona horaria).
        Si a una región le falta el precio o el link, ve la de dólares. */
@@ -70,14 +70,14 @@ const CONFIG = {
         boton: "Inscribirme con Mercado Pago · $ 195.000",
         chip: "Inscribirme · 3 cuotas sin interés", // botón chico sobre el video
         nota: "Pago seguro con Mercado Pago. Después de pagar, envía el comprobante por WhatsApp y te damos el acceso.",
-        dudas: "https://wa.link/x5jiat"
+        dudas: "https://wa.link/dqwu7r"
       },
       VE: {
         precio: "111.500 Bs", lista: "175 USD",
         pago: "https://wa.link/0t6247", // se paga por Pago Móvil: los datos se pasan por WhatsApp
         boton: "Quiero pagar en bolívares",
         nota: "Te pasamos los datos de Pago Móvil por WhatsApp.",
-        dudas: "https://wa.link/0t6247"
+        dudas: "https://wa.link/dqwu7r"
       }
     },
     notaAlumnas: "¿Ya eres alumna de Coach Estético? Tu precio es 99 USD: escríbenos por WhatsApp. Si eres miembro activo de LIFE+ o Lifetime, ya lo tienes incluido."

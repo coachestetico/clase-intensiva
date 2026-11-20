@@ -147,7 +147,10 @@
     return {
       async preparar() { /* YouTube no se puede desbloquear desde afuera: si hace falta, aparece "Tocar para escuchar" */ },
       async iniciar(segundo) {
-        await listo;
+        /* Si YouTube no carga (pasa en algunos navegadores de Instagram/WhatsApp), antes la página esperaba para siempre sin avisar */
+        const limite = esperar(20000).then(() => { throw new Error("YouTube no cargó en 20 s"); });
+        limite.catch(() => {}); // si YouTube carga antes, este aviso queda sin usar
+        await Promise.race([listo, limite]);
         reproductor.seekTo(segundo, true);
         reproductor.unMute();
         reproductor.playVideo();
@@ -214,7 +217,7 @@
     mostrar(null);
     $("pantalla-completa").hidden = false;
     let conSonido;
-    try { conSonido = await video.iniciar(segundo); } catch (err) { mostrarError(); return; }
+    try { conSonido = await video.iniciar(segundo); } catch (err) { mostrarError(err && err.message); return; }
     if (!conSonido) pedirToque("La clase ya empezó", "Tocar para escuchar");
     registrarEvento("inicio", { segundo: Math.round(segundo) });
 
@@ -240,10 +243,10 @@
     }, 500);
   }
 
-  function mostrarError() {
+  function mostrarError(detalle) {
     termino = true;
     mostrar("capa-error");
-    registrarEvento("error_video", { segundo: segundoActual() });
+    registrarEvento("error_video", { segundo: segundoActual(), detalle: detalle || "" });
   }
 
   function pedirToque(titulo, boton) {
@@ -327,6 +330,10 @@
   }
 
   mostrar("capa-espera");
+  /* Quién se va mientras espera la cuenta regresiva (segundo = cuántos segundos le faltaban) */
+  window.addEventListener("pagehide", () => {
+    if (!empezo) registrarEvento("salida_espera", { segundo: Math.max(0, Math.round((inicio - Date.now()) / 1000)) });
+  }, { once: true });
   $("hora-inicio").textContent = `${textoFechaLarga(inicio)} · tu hora local`;
   $("activar-sonido").addEventListener("click", async () => {
     await video.preparar();
