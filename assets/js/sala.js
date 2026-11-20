@@ -172,6 +172,7 @@
     if (calendarioVisible) return;
     calendarioVisible = true;
     if ($("calendario")) $("calendario").hidden = false;
+    registrarEvento("calendario", { segundo: segundoActual() });
   }
   function lanzarOferta() {
     if (ofertaLanzada) return;
@@ -217,8 +218,16 @@
     if (!conSonido) pedirToque("La clase ya empezó", "Tocar para escuchar");
     registrarEvento("inicio", { segundo: Math.round(segundo) });
 
+    /* Para saber en qué minuto se va cada persona: un aviso cada 5 minutos de clase vista y otro al cerrar la página. */
+    let ultimoProgreso = Math.round(segundo);
+    window.addEventListener("pagehide", () => { if (!termino) registrarEvento("salida", { segundo: segundoActual() }); }, { once: true });
+
     setInterval(() => {
       if (termino) return;
+      if (video.reproduciendo() && segundoActual() - ultimoProgreso >= 300) {
+        ultimoProgreso = segundoActual();
+        registrarEvento("progreso", { segundo: ultimoProgreso });
+      }
       if (!calendarioVisible && video.tiempo() >= (CONFIG.bootcampSegundo || CONFIG.ofertaSegundo)) mostrarCalendario();
       if (!ofertaLanzada && video.tiempo() >= CONFIG.ofertaSegundo) lanzarOferta();
       /* Si se pausó sola (celular bloqueado, pestaña en segundo plano), se ofrece seguir */

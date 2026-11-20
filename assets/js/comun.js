@@ -158,6 +158,7 @@ function enviarAPlanilla(datos) {
 
 function registrarEvento(evento, extra = {}) {
   const { id, inicio } = parametros();
+  if (!id) return Promise.resolve(); // links de prueba (?prueba): sin persona, no se guardan
   return enviarAPlanilla({ tipo: "evento", evento, id, clase: inicio ? new Date(inicio).toISOString() : "", ...extra });
 }
 
